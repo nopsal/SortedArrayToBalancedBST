@@ -1,0 +1,15 @@
+1. Write an SQL query to fetch worker names with salaries >= 50000 and <= 100000
+
+select first_name, last_name from employees where salary >= 50000 and salary <= 100000;
+
+2. Write an SQL query to fetch the no. of workers for each department in the descending order.
+
+select count(*), department from employees group by department order by count(*) desc;
+
+3. Write an SQL query to fetch intersecting records of two tables.
+
+select * from worker inner join bonus on worker.id = bonus.worker_id inner join title on worker.id = title.worker_id;
+
+4. Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+
+select salary from worker order by salary offset 4 rows fetch next 1 rows only;
